@@ -10,5 +10,8 @@ public class Print extends Commande{
         catch (ExpresExcept e){
             System.out.println(e.getMessage());
         }
+        catch (Exception e){
+            System.out.println("Expression Erroné");
+        }
     }
 }

@@ -10,7 +10,7 @@ class functionresult
 public interface Analiseur {
      default Double evaluate(String expression , HashMap<String, Double> variable)
              throws ExpresExcept{
-        List<String> listfunc = Arrays.asList("sin", "cos", "tan", "sqrt");
+        List<String> listfunc = Arrays.asList("sin", "cos", "tan", "sqrt","abs","log");
         char[] tokens = expression.toCharArray();
         int cpt;
         // Stack for numbers: 'values'
@@ -184,6 +184,12 @@ public interface Analiseur {
                 } else if (fonc.equals("sqrt")) {
                     result  = Math.sqrt(evaluate(nvexp,variable));
 
+                }
+                else if (fonc.equals("abs")) {
+                    result = Math.abs(evaluate(nvexp, variable));
+                }
+                else if (fonc.equals("log")) {
+                    result = Math.log(evaluate(nvexp, variable));
                 }
             }
 
